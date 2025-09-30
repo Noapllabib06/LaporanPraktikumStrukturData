@@ -3,7 +3,9 @@
 
 ## Dasar Teori
 
-yang panjang dikit
+Dalam C++ ada beberapa dasar penting yang sering dipakai saat membuat program. Operasi aritmatika seperti tambah, kurang, kali, bagi, dan sisa bagi digunakan untuk menghitung angka. Kalau memakai tipe data int, hasil bagi hanya bulat karena pecahan dibuang, jadi kalau ingin hasil desimal lebih baik memakai float atau double. Selain itu ada fungsi dan prosedur. Fungsi digunakan untuk menghitung sesuatu dan mengembalikan hasil, sedangkan prosedur hanya menampilkan hasil tanpa mengembalikan nilai. Ada juga percabangan seperti if-else dan switch-case yang dipakai untuk membuat keputusan, misalnya menentukan besar diskon atau membedakan hari kerja dengan hari libur.
+
+Kemudian ada perulangan yang dipakai untuk mengulang perintah berkali-kali supaya lebih singkat dan tidak menulis kode berulang. Bentuk perulangan ada for, while, dan do-while dengan cara kerja masing-masing. C++ juga punya struct yang berguna untuk mengelompokkan data yang berhubungan, misalnya menyimpan nama, NIM, dan IPK mahasiswa dalam satu wadah. Terakhir, untuk membaca satu karakter, bisa menggunakan getchar(), yang langsung mengambil satu huruf dari input. Semua konsep dasar ini membantu membuat program jadi lebih teratur, mudah dipahami, dan lebih efisien.
 
 ## Guided
 
@@ -238,40 +240,101 @@ Program ini dibuat untuk menerima satu karakter dari pengguna lalu menampilkanny
 
 Buatlah program yang menerima input-an dua buah bilangan betipe float, kemudian memberikan output-an hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.
 
-```go
-package main
+'''
+#include<iostream>
+using namespace std;
 
-func main() {
-	fmt.Println("Kode kalian disini")
-	fmt.Println("JANGAN MASUKIN >>SCREENSHOT<< KODE KALIAN DISINI")
-	fmt.Println("KALAU ADA -20 POIN LAPRAK")
+int main(){
+    float angka1, angka2;
+    cout << "Masukan Angka1 : ";
+    cin >> angka1;
+    cout << "Masukan Angka2 : ";
+    cin >> angka2;
+
+    //Penjumlahan
+    cout << "Penjumlahan : " << angka1 + angka2 << endl;
+    //Pengurangan
+    cout << "Pengurangan : " << angka1 - angka2 << endl;
+    //Perkalian
+    cout << "Perkalian : " << angka1 * angka2 << endl;
+    //Pembagian
+    if ( angka2 != 0) {
+        cout << "Pembagian : " << angka1 / angka2 << endl;
+    } else {
+        cout << "Pembagian : Tidak Bisa Karena Pembagi Adalah 0";
+    }
+    return 0;
 }
-```
+'''
 
 > Output
 > ![Screenshot bagian x](output/Nomor1.png)
-> %% Untuk mencantumkan screenshot, tidak boleh ada spasi di urlnya `()`, penamaan file bebas asal gak sara dan mudah dipahami aja,, dan jangan lupa hapus komen ini yah%%
 
-Penjelasan ttg kode kalian disini
+Program di atas merupakan contoh sederhana dalam bahasa C++ untuk melakukan operasi aritmatika dasar. Pertama, pengguna diminta memasukkan dua angka bertipe float, lalu program menampilkan hasil penjumlahan, pengurangan, perkalian, dan pembagian dari kedua angka tersebut. Untuk operasi pembagian, program menggunakan pengecekan if agar tidak terjadi kesalahan ketika pembagi bernilai nol. Jika angka kedua tidak sama dengan nol, hasil pembagian akan ditampilkan, sedangkan jika bernilai nol, program memberikan pesan khusus bahwa pembagian tidak bisa dilakukan. Dengan cara ini, program tidak hanya menghitung, tetapi juga menangani kondisi khusus secara aman.
 
 ### Soal 2
 
 Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di- input-kan user adalah bilangan bulat positif mulai dari 0 s.d 100
 
-```go
-package main
+'''
+#include <iostream>
+#include <string>
+using namespace std;
 
-func main() {
-	fmt.Println("kode untuk soal nomor 2A")
+string stringsatuan(int n) {
+    string satuan[] = {"", "satu", "dua", "tiga", "empat", "lima",
+                       "enam", "tujuh", "delapan", "sembilan"};
+
+    if (n == 0) return "nol";
+    if (n == 100) return "seratus";
+
+    int puluh = n / 10;
+    int sisa  = n % 10;
+
+    //kasus untuk satua
+    if (puluh == 0) {
+        return satuan[sisa];
+    }
+
+    // kasus buat belasan
+    if (puluh == 1) {
+        if (sisa == 0) {
+            return "sepuluh";
+        } else if (sisa == 1) {
+            return "sebelas"; 
+        } else { 
+            return satuan[sisa] + " belas";
+        }
+    }
+
+    if (puluh > 1) {
+        if (sisa == 0) {
+            return satuan[puluh] + " puluh";
+        } else { 
+            return satuan[puluh] + " puluh " + satuan[sisa];
+        }
+    }
 }
-```
+
+int main() {
+    int angka;
+    cout << "Masukkan angka (0 - 100): ";
+    cin >> angka;
+
+    if (angka < 0 || angka > 100) {
+        cout << "Input harus 0 - 100" << endl;
+    } else {
+        cout << angka << " : " << stringsatuan(angka) << endl;
+    }
+
+    return 0;
+}
+'''
 
 > Output
 > ![Screenshot bagian x](output/Nomor2.png)
 
-penjelasan kode
-
-Kalau adalanjutan di lanjut disini aja
+Program C++ ini berfungsi mengubah angka 0–100 menjadi tulisan dalam bahasa Indonesia. Fungsi stringsatuan() menangani berbagai kasus: angka 0 ditulis “nol”, angka 100 menjadi “seratus”, angka 1–9 langsung diambil dari array satuan, angka 10–19 ditangani khusus dengan pola “sepuluh”, “sebelas”, atau “... belas”, sedangkan angka puluhan 20–90 ditulis dengan pola “... puluh” ditambah satuannya jika ada. Pada fungsi main(), pengguna diminta memasukkan angka, lalu program mengecek apakah valid; jika ya, hasil angka dalam bentuk tulisan ditampilkan, jika tidak akan muncul pesan error.
 
 
 ### Soal 3
@@ -283,19 +346,46 @@ output : 3 2 1 * 1 2 3
 		     1 * 1
 			   *
 
-```go
-package main
+'''
+#include <iostream>
+using namespace std;
 
-func main() {
-	fmt.Println("kode untuk soal nomor 2B")
+int main() {
+    int n;
+    cout << "Masukkan input: ";
+    cin >> n;
+
+    for (int i = n; i >= 1; i--) {
+        for (int s = 0; s < (n - i) * 2; s++)
+            cout << " ";
+
+        for (int j = i; j >= 1; j--)
+            cout << j << " ";
+
+        cout << "* ";
+
+        for (int j = 1; j <= i; j++)
+            cout << j << " ";
+
+        cout << endl;
+    }
+
+    for (int s = 0; s < n * 2; s++)
+        cout << " ";
+    cout << "*" << endl;
+
+    return 0;
 }
-```
+'''
 
 > Output
 > ![Screenshot bagian x](output/Nomor3.png)
 
-penjelasan bedanya sesuai soal
+Program C++ ini digunakan untuk menampilkan pola berbentuk segitiga terbalik dengan angka dan tanda bintang di tengah. Pertama, pengguna memasukkan sebuah bilangan bulat n sebagai tinggi pola. Pada setiap baris, program menambahkan spasi sesuai dengan baris ke berapa agar pola rata ke kanan, kemudian mencetak angka menurun dari i sampai 1, diikuti tanda *, lalu mencetak angka naik kembali dari 1 sampai i. Setelah semua baris selesai, program menambahkan satu baris terakhir berisi spasi sebanyak n*2 diikuti satu tanda * di tengah. Hasil akhirnya adalah pola simetris dengan bintang sebagai pemisah di antara angka menurun dan angka menaik.
+
 
 ## Referensi
 
-1. https://en.wikipedia.org/wiki/Data_structure (diakses blablabla)
+1. Nomor Unguided 3 terinspirasi dari algoritna yang digunakan pada UTS Lisa ALPRO1 saat mencetak sebuah belah     ketupat dan membentuknya kedalam beragam bentuk segitiga.
+
+2. 
