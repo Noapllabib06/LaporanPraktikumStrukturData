@@ -11,7 +11,7 @@ Kemudian ada perulangan yang dipakai untuk mengulang perintah berkali-kali supay
 
 ### soal 1 Aritmatika
 
-'''c++
+'''C++
 #include <iostream>
 using namespace std;
 int main()
