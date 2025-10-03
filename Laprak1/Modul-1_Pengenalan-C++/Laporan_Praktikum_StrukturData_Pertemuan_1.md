@@ -25,6 +25,7 @@ int main()
     cout << "Nilai z = " << Z << endl;
     return 0;
 }
+'''
 
 Program C++ ini menghitung hasil operasi aritmatika sederhana. Variabel X, Y, dan W bertipe integer, sedangkan Z bertipe float. Setelah diberi nilai 7, 3, dan 1, program menghitung (X + Y) / (Y + W) atau 10 / 4. Karena pembagian dilakukan dengan integer, hasilnya 2, lalu disimpan ke Z dan ditampilkan sebagai “Nilai z = 2”. Jika ingin memperoleh hasil pecahan 2,5, maka salah satu operand harus dikonversi ke float.
 
@@ -78,6 +79,7 @@ int main()
 
     return 0;
 }
+'''
 
 Program ini ditulis dalam bahasa C++ untuk menghitung luas dan keliling persegi panjang menggunakan fungsi dan prosedur. Pertama, terdapat fungsi hitungLuas() yang mengembalikan hasil perkalian panjang dan lebar, serta fungsi hitungKeliling() yang mengembalikan dua kali jumlah panjang dan lebar. Selain itu, terdapat prosedur tampilkanHasil() yang langsung mencetak panjang, lebar, luas, dan keliling tanpa mengembalikan nilai. Pada bagian main, pengguna diminta memasukkan nilai panjang dan lebar. Nilai tersebut kemudian dihitung dengan fungsi untuk mendapatkan luas dan keliling, lalu ditampilkan. Setelah itu, prosedur dipanggil untuk menampilkan hasil perhitungan dengan format yang lebih lengkap. Dengan demikian, program ini memperlihatkan perbedaan penggunaan fungsi yang mengembalikan nilai dan prosedur yang hanya menampilkan hasil.
 
@@ -139,6 +141,7 @@ int main()
     }
     return 0;
 }
+'''
 
 Program ini dibuat untuk latihan Menggunakan percabangan di C++. Bagian pertama (dikasih tanda komentar) dipakai untuk ngitung diskon belanja. jika total belanja Rp100.000 ke atas, dapat diskon 5%, kalau kurang berarti tidak ada diskon. Bagian ketiga (yang jalan) dipakai buat Menentukan hari kerja atau hari libur dari kode angka 1–7. Kalau masukin angka 1–5 hasilnya “Hari Kerja”, kalau 6 atau 7 jadi “Hari Libur”, dan kalau salah input muncul pesan error. Jadi program ini nunjukin cara pakai if–else sama switch–case buat masalah sehari-hari.
 
@@ -173,6 +176,7 @@ int main()
     } while (i < jum);
     return 0;
 }
+'''
 
 Program ini berisi contoh penggunaan perulangan (looping) di C++. Pada bagian pertama (yang dikomentari) digunakan perulangan for. Program meminta input jumlah perulangan, lalu mencetak tulisan “saya sahroni” sebanyak jumlah yang diminta. Bagian kedua (yang dijalankan) menggunakan perulangan do–while. Program meminta input angka, lalu mencetak teks “bahlil ke-…” secara berulang sambil menambahkan nomor urut. Perulangan akan terus berjalan selama nilai i masih lebih kecil dari jumlah yang dimasukkan. Melalui program ini terlihat perbedaan antara for yang langsung tahu batas perulangan dari awal, dan do–while yang minimal dijalankan sekali walaupun syaratnya tidak langsung terpenuhi.
 
@@ -209,6 +213,7 @@ int main() {
 
     return 0;
 }
+'''
 
 Program ini adalah contoh penggunaan struct di C++. Pertama, dibuat sebuah struktur bernama Mahasiswa yang berisi tiga data: nama (tipe string), nim (tipe string), dan ipk (tipe float). Di dalam main(), dibuat variabel mhs1 bertipe Mahasiswa. Program kemudian meminta pengguna untuk memasukkan nama, NIM, dan IPK. Data tersebut disimpan ke dalam mhs1, lalu ditampilkan kembali dengan format yang rapi. Dengan cara ini, program memperlihatkan bagaimana struct bisa dipakai untuk mengelompokkan beberapa data yang saling berhubungan, misalnya data mahasiswa.
 
@@ -225,6 +230,7 @@ int main()
     cout << "Karakter yang Anda masukkan adalah: " << ch << endl;
     return 0;
 }
+'''
 
 Program ini dibuat untuk menerima satu karakter dari pengguna lalu menampilkannya kembali. Pada awalnya, variabel ch dideklarasikan bertipe string, kemudian nilai dimasukkan dengan fungsi getchar(). Karena getchar() hanya membaca satu karakter, sebenarnya lebih cocok jika variabel tersebut menggunakan tipe char. Setelah pengguna mengetikkan karakter, program akan menuliskannya kembali ke layar dengan pesan “Karakter yang Anda masukkan adalah …”. Dengan begitu, program ini memperlihatkan cara sederhana membaca input berupa satu huruf dengan getchar().
 
@@ -259,6 +265,7 @@ int main(){
     }
     return 0;
 }
+'''
 
 > Output
 > ![Screenshot Nomor 1](output/Nomor1.PNG)
@@ -322,6 +329,7 @@ int main() {
 
     return 0;
 }
+'''
 
 > Output
 > ![Screenshot Nomor 2](output/Nomor2.PNG)
@@ -369,6 +377,7 @@ int main() {
 
     return 0;
 }
+'''
 
 > Output
 > ![Screenshot Nomor 3](output/Nomor3.PNG)
@@ -382,4 +391,4 @@ Program C++ ini digunakan untuk menampilkan pola berbentuk segitiga terbalik den
 
 2. Sianipar, R. H. (2014). Pemrograman C++ Untuk Pemula (Vol. 1). Penerbit INFORMATIKA. https://books.google.com/books?hl=id&lr=&id=tQR2DwAAQBAJ&oi=fnd&pg=PA1&dq=pemrograman+c%2B%2B&ots=rEm8lyLHIR&sig=wmpxiLpPmn8dn5Q9vP9zY8XrsgQ
 
-3. Samala, A. D., Fajri, B. R., & Ranuarja, F. (2021). PEMROGRAMAN C++. UNP PRESS. https://books.google.com/books?hl=id&lr=&id=49ZbEAAAQBAJ&oi=fnd&pg=PA2&dq=pemrograman+c%2B%2B&ots=4sYIx_JYCx&sig=ouhrRQNOGTjAM3F2phz0_RIeUjY
+2. 
